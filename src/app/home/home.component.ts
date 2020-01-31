@@ -20,7 +20,7 @@ export class HomeComponent {
             this.loading = false;
             this.users = users;
         });
-        
+        this.items = Array(150).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}`}));
     }
 
     onChangePage(pageOfItems: Array<any>) {
