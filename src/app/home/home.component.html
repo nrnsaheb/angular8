@@ -1,5 +1,5 @@
 ﻿<div class="card mt-4">
-    
+
     <h5 class="card-header">User details</h5>
     <div class="card-body">
         <h6>Users from secure api end point</h6>
@@ -14,21 +14,25 @@
                   <a href="mailto:{{user.email}}" class="btn btn-primary">{{user.email}}</a>
                 </div>
               </div> -->
-              <div class="row">
+            <div class="row">
                 <div *ngFor="let user of users.data">
-                    
-                     
-                <div class="col-lg-8 mb-5">
-                    <div class="card mr-5 border-0"style="width: 18rem;"> 
-                    <!-- <div class="card-body"> -->
-                        <img src="{{user.avatar}}" class="card-img-top" alt="..." style="width: 256px;height: 256px;">
-                        <span class="card-text">{{user.first_name}} {{user.last_name}}</span>
-                        <a href="mailto:{{user.email}}" class="btn btn-primary">{{user.email}}</a>
-                      </div>
-                  </div>
+
+
+                    <div class="col-lg-8 mb-5">
+                        <div class="card mr-5 border-0" style="width: 18rem;">
+                            <!-- <div class="card-body"> -->
+                            <img src="{{user.avatar}}" class="card-img-top" alt="..."
+                                style="width: 256px;height: 256px;">
+                            <span class="card-text">{{user.first_name}} {{user.last_name}}</span>
+                            <a href="mailto:{{user.email}}" class="btn btn-primary">{{user.email}}</a>
+                        </div>
+                    </div>
                 </div>
-                </div>
-                <!-- </div> -->
+            </div>
+            <!-- </div> -->
         </ul>
+    </div>
+    <div class="card-footer pb-0 pt-3">
+        <jw-pagination [items]="items" (changePage)="onChangePage($event)"></jw-pagination>
     </div>
 </div>
