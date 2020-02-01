@@ -2,7 +2,10 @@
 import { first } from 'rxjs/operators';
 
 import { User } from '@app/_models';
-import { UserService, AuthenticationService } from '@app/_services';
+import { Products } from '@app/_models';
+import { UserService, AuthenticationService} from '@app/_services';
+
+import { ProductsService } from '@app/_services';
 
 @Component({ templateUrl: 'home.component.html' })
 export class HomeComponent {
@@ -10,6 +13,8 @@ export class HomeComponent {
     users: User[];
     items = [];
     pageOfItems: Array<any>;
+    Products: Products[];
+    ProductsService: any;
 
     constructor(private userService: UserService) { }
 
@@ -20,7 +25,7 @@ export class HomeComponent {
             this.loading = false;
             this.users = users;
         });
-        this.items = Array(150).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}`}));
+        this.items = Array(3).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}`}));
     }
 
     onChangePage(pageOfItems: Array<any>) {

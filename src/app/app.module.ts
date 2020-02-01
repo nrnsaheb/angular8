@@ -13,6 +13,7 @@ import { appRoutingModule } from './app.routing';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
     imports: [
@@ -26,7 +27,8 @@ import { LoginComponent } from './login';
         HomeComponent,
         LoginComponent,
         JwPaginationComponent
-    ],
+,
+        ProductsComponent    ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
