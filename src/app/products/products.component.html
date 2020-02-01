@@ -1,0 +1,25 @@
+<p>
+  products works!
+</p>
+
+<h5 class="card-header">User details</h5>
+<div class="card-body">
+    <h6>Users from secure api end point</h6>
+    <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+    <ul *ngIf="Products.data">
+        <div class="row">
+            <div *ngFor="let product of Products.data">
+                <div class="col-lg-8 mb-5">
+                    <div class="card mr-5 border-0" style="width: 18rem;">
+                        <p class="card-text text-info">{{product.employee_name}} <br/> {{product.id}}</p>
+                        <p href="mailto:" class="btn btn-secondary">{{product.color}}<br/>{{product.year}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ul>
+
+    <div class="card-footer pb-0 pt-3">
+        <jw-pagination [items]="items" (changePage)="onChangePage($event)"></jw-pagination>
+    </div>
+</div>  
