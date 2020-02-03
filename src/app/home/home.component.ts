@@ -1,15 +1,23 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component, NgModule } from '@angular/core';
 import { first } from 'rxjs/operators';
 
 import { User } from '@app/_models';
-import { UserService, AuthenticationService } from '@app/_services';
+import { Products } from '@app/_models';
+import { UserService, AuthenticationService} from '@app/_services';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
-@Component({ templateUrl: 'home.component.html' })
+import { ProductsService } from '@app/_services';
+
+@Component({ templateUrl: 'home.component.html',
+styleUrls: ['./home.component.less'] })
 export class HomeComponent {
     loading = false;
+    searchText;
     users: User[];
     items = [];
     pageOfItems: Array<any>;
+    Products: Products[];
+    ProductsService: any;
 
     constructor(private userService: UserService) { }
 
@@ -20,7 +28,7 @@ export class HomeComponent {
             this.loading = false;
             this.users = users;
         });
-        
+        this.items = Array(3).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}`}));
     }
 
     onChangePage(pageOfItems: Array<any>) {
