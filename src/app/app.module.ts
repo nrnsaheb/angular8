@@ -1,4 +1,4 @@
-﻿import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -15,7 +15,7 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { ProductsComponent } from './products/products.component';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
+//import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
     imports: [
@@ -23,7 +23,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
         ReactiveFormsModule,
         HttpClientModule,
         appRoutingModule,
-        Ng2SearchPipeModule,
+        //Ng2SearchPipeModule,
         FormsModule
     ],
     declarations: [
@@ -39,6 +39,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
         // provider used to create fake backend
         // fakeBackendProvider
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+
 })
 export class AppModule { }
